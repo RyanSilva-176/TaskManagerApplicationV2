@@ -1,0 +1,52 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" id="html">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <!-- Font awesome cdn link-->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+</head>
+<body>
+<div class="container">
+    <header>
+        <div>
+            <h2>Faça login e começe a usar!</h2>
+        </div>
+    </header>
+    <div id="msgError"></div>
+    <div id="msgSuccess"></div>
+    <form action="#">
+        <div class="email-div">
+            <label id="userLabel" for="usuario">Usuário</label>
+            <input
+                   type="text"
+                   name="usuario"
+                   id="usuario"
+                   placeholder="Digite seu usuario"
+                   required
+            />
+        </div>
+        <div class="password-div">
+            <label id="senhaLabel" for="senha">Senha</label>
+            <input
+                    type="password"
+                    name="Sua senha"
+                    id="senha"
+                    placeholder="*************"
+                    required
+            />
+            <i class="fas fa-eye"></i>
+        </div>
+
+        <a id="login" onclick="entrar()"
+        >Entrar</a>
+    </form>
+    <div>
+        <p>Não possui conta? <a th:href="@{/cadastro}">Crie uma agora!</a></p>
+    </div>
+</div>
+<script src="/js/login.js"></script>
+</body>
+</html>

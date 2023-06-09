@@ -1,0 +1,68 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" id="html">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <!-- Font awesome cdn link-->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+</head>
+<body>
+<div class="container">
+    <header>
+        <div>
+            <h2>Informe seus dados</h2>
+        </div>
+    </header>
+    <form action="#">
+        <div id="msgError"></div>
+        <div id="msgSuccess"></div>
+        <div class="name-div">
+            <label id="labelNome" for="nome">Nome</label>
+            <input type="text"
+                   name="nome"
+                   id="nome"
+                   placeholder="Digite seu nome"
+                   required
+            />
+        </div>
+        <div class="user-div">
+            <label id="labelUsuario" for="usuario">Usuário</label>
+            <input type="text"
+                   name="usuario"
+                   id="usuario"
+                   placeholder="Digite seu usuario"
+                   required
+            />
+        </div>
+        <div class="password-div">
+            <label id="labelSenha" for="senha">Senha</label>
+            <input type="password"
+                   name="Sua senha"
+                   id="senha"
+                   placeholder="*************"
+                   required
+            />
+            <i id="verSenha" class="fas fa-eye"></i>
+        </div>
+        <div class="password-div">
+            <label id="labelConfirmSenha" for="confirmarSenha">Confirmar senha</label>
+            <input type="password"
+                   name="Sua senha"
+                   id="confirmarSenha"
+                   placeholder="*************"
+                   required
+            />
+            <i id="verConfirm" class="fas fa-eye"></i>
+        </div>
+        <a id="login" th:href="@{/}" onclick="cadastrar()"
+        >Cadastrar</a>
+    </form>
+    <div>
+        <a th:href="@{/}">Sair</a>
+    </div>
+</div>
+<script src="/js/cadastro.js"></script>
+</body>
+</html>

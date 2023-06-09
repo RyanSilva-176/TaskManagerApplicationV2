@@ -1,0 +1,533 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+
+:root {
+  --green: #27ae60;
+  --light: #e6e6e6;
+  --black: #121214;
+  --dark: #202024;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+}
+
+section {
+  padding: 0.5rem 2%;
+}
+
+/* Acessibilidade */
+
+#abrirMenu{
+    background: var(--green);
+    color: var(--light);
+    padding: .5rem;
+    font-size: 4rem;
+    border-radius: 50%;
+    position: absolute;
+    position: fixed;
+    top: 80%;
+    right: 2%;
+    z-index: 9998 !important;
+    cursor: pointer;
+}
+
+.accessibility {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  position: fixed;
+  top: 65%;
+  right: 2%;
+  z-index: 9998 !important;
+  background-color: #023190;
+  padding: 2rem;
+  border-radius: 5%;
+  visibility: hidden;
+}
+
+.accessibility #sairMenu{
+    color: var(--light);
+    background-color: #ae3e27;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.accessibility #sairMenu:hover{
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+.accessibility .menu-title {
+  color: var(--light);
+  font-size: 2rem;
+}
+
+.accessibility .menu-text {
+  color: var(--light);
+  font-size: 1.5rem;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.buttons .btn {
+  padding: 0 10px;
+  display: inline-flex;
+  background: var(--dark);
+  color: var(--light);
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.buttons .btn.active {
+  background: var(--green);
+}
+
+.buttons .btn:nth-child(1) {
+  font-size: 1.5rem;
+}
+.buttons .btn:nth-child(2) {
+  font-size: 2rem;
+}
+.buttons .btn:nth-child(3) {
+  font-size: 2.5rem;
+}
+
+/* Acessibilidade */
+
+.heading {
+  text-align: center;
+  color: var(--light);
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.heading-md{
+  color: var(--light);
+  font-size: 2.5rem;
+}
+
+.sub-heading {
+  color: var(--green);
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.text {
+  color: var(--light);
+  font-size: 1.5rem;
+}
+
+header .container {
+  padding: 2rem 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 200px;
+  color: var(--light);
+}
+
+.logo {
+  height: 35px;
+}
+
+.logo-name{
+  font-size: 1.5rem;
+  color: var(--light);
+}
+
+.search-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  gap: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #023190;
+  box-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.1);
+}
+
+.search-div i {
+  font-size: 16px;
+  margin-left: 0.5rem;
+  color: var(--light);
+}
+
+.search-div input {
+  border: none;
+  background: none;
+  height: 34px;
+  width: 100%;
+  outline: none;
+  color: var(--light);
+}
+
+.adm-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  width: 200px;
+}
+
+.adm-info .username {
+  font-size: 1.5rem;
+  color: var(--light);
+}
+
+.adm-info div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.adm-info a {
+  background: #ae3e27;
+  color: var(--light);
+  font-size: 16px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.adm-info a:hover {
+  background: var(--light);
+  color: #121214;
+}
+
+.userImage {
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+  background: #02318F;
+  padding: 0.5rem;
+}
+
+#username{
+  background: var(--green);
+  color: var(--light);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.employees {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.employees .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu a {
+  cursor: pointer;
+  background: var(--green);
+  color: var(--light);
+  font-size: 16px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  box-shadow: ;
+}
+
+.menu a:hover {
+  background: var(--dark);
+}
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.box {
+  padding: 2.5rem;
+  background: #202024;
+  border-radius: 0.5rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.box:hover{
+  background: #404047;
+}
+
+.box .fa-pencil,
+.box .fa-trash {
+  position: absolute;
+  top: 1.5rem;
+  background: var(--light);
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: #202024;
+}
+
+.box .fa-pencil:hover {
+  background: var(--green);
+  color: var(--light);
+}
+
+.box .fa-trash:hover {
+  background: #ae3e27;
+  color: var(--light);
+}
+
+.box .fa-pencil {
+  right: -15rem;
+}
+
+.box .fa-trash {
+  left: -15rem;
+}
+
+.box:hover .fa-pencil {
+  right: 1.5rem;
+}
+.box:hover .fa-trash {
+  left: 1.5rem;
+}
+
+.box img {
+  height: 17rem;
+  margin: 1rem 0;
+  border-radius: 50%;
+}
+
+.box #msg-alert {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 30%;
+  left: 11%;
+  background: var(--black);
+  padding: 1.3rem;
+  border-radius: 4px;
+}
+
+.box #msg-alert h3 {
+  color: var(--light);
+  font-size: 1.5rem;
+}
+
+.box #msg-alert #employee-name {
+  color: var(--light);
+  background: var(--green);
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 4px;
+  width: max-content;
+  padding: 2px 8px;
+}
+
+.box #msg-alert .opt {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.box #msg-alert #opt-no {
+  color: var(--light);
+  background: #ae3e27;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 40px;
+}
+
+.box #msg-alert #opt-no:hover{
+  background: #a45e50;
+}
+
+.box #msg-alert #opt-yes {
+  color: var(--light);
+  background: #02318f;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 40px;
+}
+
+.box #msg-alert #opt-yes:hover{
+  background: #224486;
+}
+
+/* darkmode switch */
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: var(--dark);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5px;
+  position: relative;
+  height: 20px;
+  width: 44px;
+  transform: scale(1.5);
+}
+
+.label .ball {
+  background-color: var(--light);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2.5px;
+  height: 16px;
+  width: 16px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: #0fc4f1;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+/* dark mode css */
+
+body.light {
+  background: var(--light);
+}
+
+.box.light {
+  background: var(--light);
+}
+
+.box.light:hover{
+  background: #bbbaba;
+}
+
+.heading.light{
+  color: var(--black);
+}
+
+.heading-md.light{
+  color: var(--black);
+}
+.text.light{
+  color: var(--black);
+}
+
+.logo-name.light{
+  color: var(--black);
+}
+
+#username.light{
+  color: var(--black);
+}
+
+.fa-solid.light {
+  background: var(--dark);
+  color: var(--light);
+}
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 1rem 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+  .search-div {
+    display: none;
+  }
+  .logo-div {
+    width: auto;
+  }
+  .adm-info {
+    width: auto;
+  }
+  .box img {
+    height: 24rem;
+    margin: 1rem 0;
+  }
+  .menu .heading{
+    font-size: 2rem;
+  }
+  .menu a{
+      font-size: .8rem;
+  }
+  .accessibility {
+    top: 60%;
+    right: 5%;
+  }
+
+  .accessibility .menu-title {
+    font-size: 1.5rem !important;
+  }
+
+  .accessibility .menu-text {
+    font-size: 1rem !important;
+  }
+
+  .box #msg-alert {
+      top: 30%;
+      left: 25%;
+      visibility: visible;
+    }
+}

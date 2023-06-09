@@ -1,0 +1,136 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Nova Tarefa</title>
+    <link crossorigin="anonymous"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md mt-5">
+            <h2 class="text-center">Criar nova Tarefa</h2>
+            <hr/>
+            <div class="container" style="width: 500px;">
+                <form action="#" method="POST" th:action="@{salvartask}" th:object="${task}">
+                    <label for="titulo">Título</label>
+                    <input class="form-control mb-3" id="titulo" name="titulo" placeholder="Digite o Título"
+                           th:field="*{titulo}" th:value="*{titulo}" type="text" required/>
+                    <label for="descricao">Descrição</label>
+                    <input class="form-control mb-3" id="descricao" name="descricao" placeholder="Escreva uma descrição"
+                           th:field="*{descricao}"
+                           th:value="*{descricao}" type="text" required/>
+                    <div>
+                        <label>Estado</label>
+                        <div class="form-check">
+                            <input class="form-check-input" id="pendente" th:field="${task.estado}" type="radio"
+                                   value="Pendente" required>
+                            <label class="form-check-label" for="pendente">
+                                Pendente
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" id="em-andamento" th:field="${task.estado}" type="radio"
+                                   value="Andamento" required>
+                            <label class="form-check-label" for="em-andamento">
+                                Andamento
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="concluido" th:field="${task.estado}" type="radio"
+                                   value="Concluído" required>
+                            <label class="form-check-label" for="concluido">
+                                Concluído
+                            </label>
+                        </div>
+                    </div>
+                    <label for="dataCriacao">Data de Criação</label>
+                    <input class="form-control mb-3" id="dataCriacao" name="dataCriacao" readonly
+                           th:value="${#temporals.format(task.dataCriacao, 'yyyy-MM-dd')}" type="text" required>
+                    <label for="responsavel">Responsável</label>
+                    <input class="form-control mb-3" id="responsavel" name="nome"
+                           placeholder="Digite o nome do responsável"
+                           th:field="*{responsavel}"
+                           th:value="*{responsavel}" type="text" required/>
+                    <div>
+                        <label>Prioridade</label>
+                        <div class="form-check">
+                            <input class="form-check-input" id="baixa" th:field="${task.prioridade}" type="radio"
+                                   value="Baixa" required>
+                            <label class="form-check-label" for="baixa">
+                                Baixa
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" id="media" th:field="${task.prioridade}" type="radio"
+                                   value="Média" required>
+                            <label class="form-check-label" for="media">
+                                Média
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="alta" th:field="${task.prioridade}" type="radio"
+                                   value="Alta" required>
+                            <label class="form-check-label" for="alta">
+                                Alta
+                            </label>
+                        </div>
+                    </div>
+                    <label for="observacoes">Observações</label>
+                    <input class="form-control mb-3" id="observacoes" name="observacoes"
+                           placeholder="Escreva uma observação"
+                           th:field="*{observacoes}"
+                           th:value="*{observacoes}" type="text" required/>
+                    <div class="row text-center">
+                        <div class="col">
+                            <button class="btn btn-success" type="submit">Salvar</button>
+                        </div>
+                    </div>
+                    <input th:field="*{id}" type="hidden"/>
+                </form>
+            </div>
+            <hr/>
+            <div class="row text-center">
+                <div class="col">
+                    <a class="btn btn-info" th:href="@{/list}">Voltar a Lista</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    flatpickr("#dataCriacao", {
+        dateFormat: "Y-m-d"
+    });
+});
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var dataCriacaoInput = document.getElementById("dataCriacao");
+
+        if (dataCriacaoInput.value === '') {
+            var dataAtual = new Date().toISOString().split('T')[0];
+            dataCriacaoInput.value = dataAtual;
+        }
+
+        flatpickr("#dataCriacao", {
+            dateFormat: "Y-m-d"
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

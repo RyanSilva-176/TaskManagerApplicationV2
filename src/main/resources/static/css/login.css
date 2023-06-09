@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #black;
+}
+
+input {
+  background: #fefefe;
+  color: black;
+  width: 400px;
+  height: 48px;
+  border: none;
+  border-radius: 4px;
+  padding-inline-start: 1rem;
+  box-shadow: 2px 2px 4px 4px lightblue;
+}
+
+input:focus {
+  outline: 2px solid #033191;
+}
+
+#login {
+  height: 43px;
+  background: #033191;
+  color: #e1e1e6;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#login:focus {
+  outline: none;
+}
+
+#login:hover {
+  background: #01226a;
+}
+
+footer {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+a {
+  color: #7c7c8a;
+}
+
+a:hover {
+  color: #7791c2;
+}
+
+.password-div{
+    position: relative;
+}
+
+.fa-eye{
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  cursor: pointer;
+  color: #023190;
+}
+
+.fa-eye:hover{
+  color: lightblue;
+}
+
+#msgError {
+  text-align: center;
+  color: #ff0000;
+  background-color: #fffbbb;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+#msgSuccess {
+  text-align: center;
+  color: #00bb00;
+  background-color: #bbffbe;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  .logo {
+    height: 60px;
+    width: auto;
+  }
+  header {
+    gap: 0;
+  }
+  form {
+    gap: 2rem;
+  }
+  .user-div {
+    margin-top: 2rem;
+  }
+  input {
+    width: 350px;
+    height: 48px;
+    padding-inline-start: 1.5rem;
+  }
+}
